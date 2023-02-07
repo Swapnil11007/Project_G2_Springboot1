@@ -47,4 +47,11 @@ public class UsersDAO {
 		usersRepository.updatePasswordRepo(emailId,password);
 		return "Password Updated";
 	}
+	
+	public Users getUserByEmailId(String emailId){
+		this.user = usersRepository.getUsersByEmailId(emailId);
+		if(this.user==null)
+			return new Users(-1, null, null, null, null);
+		return this.user;
+	}
 }
