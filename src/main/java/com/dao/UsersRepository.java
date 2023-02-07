@@ -12,6 +12,9 @@ public interface UsersRepository extends JpaRepository<Users, Integer> {
 	
 	@Query("from Users e where e.emailId = :emailId and e.password = :password")
 	Users usersLogInRepo(@Param("emailId") String emailId, @Param("password") String password);
+	
+	@Query("from Users e where e.emailId = :emailId and e.password = :password")
+	Users getUsers(@Param("emailId") String emailId, @Param("password") String password);
 
 	@Modifying
 	@Transactional
@@ -19,5 +22,5 @@ public interface UsersRepository extends JpaRepository<Users, Integer> {
 	int updatePasswordRepo(@Param("emailId") String emailId, @Param("password") String password);
 	
 	@Query("from Users e where e.emailId=:emailId")
-	Users getUsersEmailId(@Param("emailId") String emailId);
+	Users getUsersByEmailId(@Param("emailId") String emailId);
 }
