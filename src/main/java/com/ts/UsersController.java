@@ -1,7 +1,6 @@
 package com.ts;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,9 +33,13 @@ public class UsersController {
 		return usersDAO.usersLogInDao(emailId, password);
 	}
 	
-	
 	@PutMapping("/updatePassword/{emailId}/{password}")
 	public String updatePassword(@PathVariable("emailId") String emailId, @PathVariable("password") String password){
 		return usersDAO.updatePasswordDao(emailId, password);
+	}
+	
+	@GetMapping("/getUserByEmailId/{emailId}")
+	public Users getUserByEmailId(@PathVariable("emailId") String emailId) {
+		return usersDAO.getUserByEmailId(emailId);
 	}
 }
