@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Beach {
-	@Id@GeneratedValue					
+	@Id@GeneratedValue	
 	private int prodId;
 	
 	@Column(name="beachName", length=30)			

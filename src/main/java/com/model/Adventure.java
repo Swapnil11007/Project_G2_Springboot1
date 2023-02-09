@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Adventure {
 	
-	@Id@GeneratedValue					
+	@Id@GeneratedValue			
 	private int prodId;
 	
 	@Column(name="adventureName", length=30)			

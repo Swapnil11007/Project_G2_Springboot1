@@ -8,27 +8,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dao.BeachDAO;
+import com.dao.AdventureDAO;
+import com.model.Adventure;
 import com.model.Beach;
-import com.model.Home;
+
+
 
 @RestController
-public class BeachController {
+public class AdventureController {
 	@Autowired	//Dependency Injection
-	BeachDAO beachDAO;
+	AdventureDAO adventureDAO;
 
-	@RequestMapping("/showAllBeach")
-	public List<Beach> showAllBeach() {
-		List<Beach> prodList = beachDAO.getAllBeach();
+	@RequestMapping("/showAllAdventure")
+	public List<Adventure> showAllAdventure() {
+		List<Adventure> prodList = adventureDAO.getAllAdventure();
 		return prodList;
 	}
 	
-	@PostMapping("/registerBeach")
-	public String registerCat(@RequestBody Beach beach){
+	@PostMapping("/registerAdenture")
+	public String registerCat(@RequestBody Adventure adventure){
 		
-		Beach b = beachDAO.registerUserDao(beach);
+		Adventure a = adventureDAO.registerUserDao(adventure);
 
-		if ( b.getProdId()!=-1 && b != null)
+		if ( a.getProdId()!=-1 && a != null)
 			return "Registration success";
 
 		return "Registration Failed!!!";

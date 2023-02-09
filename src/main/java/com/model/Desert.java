@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Desert {
 	
-	@Id@GeneratedValue					
+	@Id@GeneratedValue			
 	private int prodId;
 	
 	@Column(name="desertName", length=30)			

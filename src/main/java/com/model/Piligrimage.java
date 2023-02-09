@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Piligrimage {
 	
 	
-	@Id@GeneratedValue					
+	@Id@GeneratedValue			
 	private int prodId;
 	
 	@Column(name="piligrimName", length=30)			

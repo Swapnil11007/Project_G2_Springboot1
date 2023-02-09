@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Safari {
-	@Id@GeneratedValue					
+	@Id@GeneratedValue				
 	private int prodId;
 	
 	@Column(name="safariName", length=30)			

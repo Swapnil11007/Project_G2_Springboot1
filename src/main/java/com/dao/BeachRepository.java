@@ -13,5 +13,4 @@ public interface BeachRepository extends JpaRepository <Beach, Integer>{
 	@Query("from Beach p where p.beachName = :beachName")
 	Beach findByName(@Param("beachName") String beachName);
 
-
 }
